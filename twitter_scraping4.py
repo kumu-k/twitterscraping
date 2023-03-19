@@ -29,7 +29,7 @@ def get_data(search_word, start_date, end_date, tweet_count):
 #save
 def save_to_mongodb(scraped_data):
     client = pymongo.MongoClient(
-        "mongodb+srv://kk:123@cluster0.le0owl3.mongodb.net/test?retryWrites=true&w=majority", serverSelectionTimeoutMS=5000)
+        "mongodb+srv://*******/test?retryWrites=true&w=majority", serverSelectionTimeoutMS=5000)
     db = client.twitter
     scraped = db.scraped
     scraped.insert_many(scraped_data)
