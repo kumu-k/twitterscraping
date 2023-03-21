@@ -32,6 +32,7 @@ def save_to_mongodb(scraped_data):
         "mongodb+srv://*******/test?retryWrites=true&w=majority", serverSelectionTimeoutMS=5000)
     db = client.twitter
     scraped = db.scraped
+    scraped.drop()
     scraped.insert_many(scraped_data)
 
 import os
